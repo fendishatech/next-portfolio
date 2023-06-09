@@ -8,6 +8,22 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+.illustration-bg {
+  background: url("/illustration.png");
+  background-size: cover;
+}
+
+.website-bg {
+  background: url("/websites.jpg");
+  background-size: cover;
+}
+
+.apps-bg {
+  background: url("/apps.jpg");
+  background-size: cover;
+}
+/* Animations */
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
