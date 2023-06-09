@@ -26,7 +26,11 @@ const Hero = () => {
         </div>
       </div>
       <div className="flex-1  p-6 mt-4">
-        <Image src={HeroImg} className="w-full object-cover" alt="Hero" />
+        <Image
+          src={HeroImg}
+          className="w-full object-cover hero-image__animation"
+          alt="Hero"
+        />
       </div>
     </div>
   );

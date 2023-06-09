@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import PrimaryButton from "@/components/button/PrimaryButton";
 
 const About = () => {
   return (
@@ -52,7 +53,7 @@ const About = () => {
             <br />
             <br /> - Mobile Apps
           </p>
-          {/* <Button url="/contact" text="Contact" /> */}
+          <PrimaryButton url="/contact" text="Contact" />
         </div>
       </div>
     </div>
