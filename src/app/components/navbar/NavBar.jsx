@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
+import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
+import { ThemeContext } from "../../../context/ThemeContext";
 
 const links = [
   {
@@ -30,12 +32,19 @@ const links = [
   },
 ];
 const NavBar = () => {
+  const { darkMode } = useContext(ThemeContext);
   return (
     <div className="h-[100px] text-[22px] px-6 flex justify-between items-center shadow-md">
       <Link className="font-bold" href={"/"}>
         LogoBrand
       </Link>
-      <div className="flex justify-between items-center rounded-md">
+
+      <div
+        className={`flex justify-between items-center rounded-md ${
+          darkMode == true ? "bg-slate-800 text-gray-300" : ""
+        }`}
+      >
+        <DarkModeToggle />
         {links &&
           links.map((link) => (
             <Link
