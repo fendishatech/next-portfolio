@@ -1,17 +1,31 @@
+import { notFound } from "next/navigation";
 import Image from "next/image";
 import React from "react";
 
-const BlogPost = () => {
+async function getPost(id) {
+  const dynamicRes = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${id}`,
+    {
+      cache: "no-store",
+    }
+  );
+
+  if (!dynamicRes.ok) {
+    return notFound();
+  }
+
+  return dynamicRes.json();
+}
+
+const BlogPost = async ({ params }) => {
+  const post = await getPost(params.id);
+
   return (
     <div className="flex flex-col p-6">
       <div className="rounded-md flex gap-4">
         <div className="flex-1 gap-8 justify-start flex flex-col">
-          <h2 className=" text-4xl font-bold">Title</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam
-            illo, iusto dolore necessitatibus numquam recusandae voluptatum rem
-            repudiandae.
-          </p>
+          <h2 className=" text-4xl font-bold">{post.title}</h2>
+          <p>{post.body}</p>
           {/* Author section */}
           <div className="flex">
             <div className="w-[30px] h-[30px] flex-1 relative">
@@ -37,37 +51,9 @@ const BlogPost = () => {
           />
         </div>
       </div>
-      <p className="mt-8">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam laborum
-        ducimus odio quos. Dolorum doloribus cupiditate inventore debitis, harum
-        voluptatibus consequuntur, officiis itaque dolor suscipit et alias ea
-        rem, voluptate vero sequi quidem aliquid. Unde quo beatae, possimus
-        facere temporibus sequi neque, aut quos id, enim distinctio. Optio
-        eligendi, reiciendis animi recusandae earum sapiente porro. Dolorem
-        tenetur rerum deleniti inventore iusto, at dolores debitis ut veritatis
-        accusamus! Vero, officiis. Eos pariatur, corporis consequatur incidunt
-        illum rem molestias impedit voluptate minima dolor sunt totam,
-        consequuntur delectus ullam culpa. Blanditiis provident quod aliquid
-        ipsam facere, voluptas, minus autem consequuntur consectetur non
-        quisquam.
-      </p>
-      <p className="mt-8">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam laborum
-        ducimus odio quos. Dolorum doloribus cupiditate inventore debitis, harum
-        voluptatibus celeniti inventore iusto, at dolores debitis ut veritatis
-        accusamus! Vero, officiis. Eos pariatur, corporis consequatur incidunt
-        illum rem molestias impedit voluptate minima dolor sunt totam,
-        consequuntur delectus ullam culpa. Blanditiis provident quod aliquid
-        ipsam facere, voluptas, minus autem consequuntur consectetur non
-        quisquam.
-      </p>
-      <p className="mt-8">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam laborum
-        ducimus odio quos. Dolorum doloribus cupiditate inventore debitis, harum
-        voluptatibus consequuntur, officiis itaque dolor suscipit et alias ea
-        rem, voluptate vero sequi quidem aliquid. Unde quo beatae, possimus
-        facere temp voluptas, minus autem consequuntur consectetur non quisquam.
-      </p>
+      <p className="mt-8">{post.body}</p>
+      <p className="mt-8">{post.body}</p>
+      <p className="mt-8">{post.body}</p>
     </div>
   );
 };
