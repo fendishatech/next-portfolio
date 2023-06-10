@@ -10,7 +10,7 @@ const Portfolio = () => {
       <div className="items flex gap-10">
         <Link
           className="illustration-bg border-[4px] w-[300px] h-[300px] border-[#bbb]  relative"
-          href={"/portfolio/illustration"}
+          href={"/portfolio/illustrations"}
         >
           <p className="text-[#bbb] hover:text-[#53c28b] text-2xl font-bold right-[10px] bottom-[10px]  absolute">
             Illustrations
@@ -26,7 +26,7 @@ const Portfolio = () => {
         </Link>
         <Link
           className="apps-bg border-[4px] w-[300px] h-[300px] border-[#bbb]  relative"
-          href={"/portfolio/application"}
+          href={"/portfolio/applications"}
         >
           <p className="text-[#bbb] hover:text-[#53c28b] text-2xl font-bold right-[10px] bottom-[10px] absolute">
             Applications

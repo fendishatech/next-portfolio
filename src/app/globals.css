@@ -56,3 +56,8 @@
     transform: translateY(0px) scale(1.0);
   }
 }
+
+.even-child-reverse > *:nth-child(even) {
+  display: flex;
+  flex-direction: row-reverse;
+}
