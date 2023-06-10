@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import PrimaryButton from "@/components/button/PrimaryButton";
+import PrimaryButton from "@/app/components/button/PrimaryButton";
 
 const About = () => {
   return (
