@@ -41,7 +41,9 @@ const NavBar = () => {
 
       <div
         className={`flex justify-between items-center rounded-md ${
-          darkMode == true ? "bg-slate-800 text-gray-300" : ""
+          darkMode == true
+            ? "bg-slate-800 text-gray-300 transition duration-1000"
+            : ""
         }`}
       >
         <DarkModeToggle />

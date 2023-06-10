@@ -4,7 +4,7 @@ import React from "react";
 const BlogPost = () => {
   return (
     <div className="flex flex-col p-6">
-      <div className="rounded-md flex gap-4 hover:shadow-xl">
+      <div className="rounded-md flex gap-4">
         <div className="flex-1 gap-8 justify-start flex flex-col">
           <h2 className=" text-4xl font-bold">Title</h2>
           <p>
